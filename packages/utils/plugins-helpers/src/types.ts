@@ -1,6 +1,6 @@
 import type { ApolloEngineOptions } from '@graphql-tools/apollo-engine-loader';
 import { Source } from '@graphql-tools/utils';
-import { DocumentNode, GraphQLSchema } from 'graphql';
+import { DocumentNode, GraphQLSchema, IntrospectionOptions } from 'graphql';
 import type { Profiler } from './profiler.js';
 
 export namespace Types {
@@ -79,7 +79,7 @@ export namespace Types {
    * @additionalProperties false
    * @description Loads a schema from remote endpoint, with custom http options.
    */
-  export interface UrlSchemaOptions {
+  export interface UrlSchemaOptions extends IntrospectionOptions {
     /**
      * @description HTTP headers you wish to add to the HTTP request sent by codegen to fetch your GraphQL remote schema.
      */
